@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import useHashRoute from './hooks/useHashRoute'
 import useReveal from './hooks/useReveal'
-import DitherBackground from './sections/DitherBackground'
+import PageBackground, { useBackgroundChoice } from './backgrounds/PageBackground'
 import Nav from './sections/Nav'
 import Hero from './sections/Hero'
 import Proof from './sections/Proof'
@@ -12,11 +12,13 @@ import Proceso from './sections/Proceso'
 import Nosotros from './sections/Nosotros'
 import Contacto from './sections/Contacto'
 import Footer from './sections/Footer'
-import Laboratorio from './lab/Laboratorio'
+// El laboratorio trae muchas librerías: se descarga solo cuando alguien lo abre.
+const Laboratorio = lazy(() => import('./lab/Laboratorio'))
 
 export default function App() {
   const route = useHashRoute()
   const onLab = route === 'laboratorio'
+  const [bg, setBg] = useBackgroundChoice()
   useReveal([route])
 
   // Al volver del laboratorio con un ancla (#costo), bajar a esa sección ya renderizada.
@@ -28,10 +30,12 @@ export default function App() {
 
   return (
     <>
-      <DitherBackground />
+      <PageBackground bg={bg} />
       <Nav onLab={onLab} />
       {onLab ? (
-        <Laboratorio />
+        <Suspense fallback={<main className="lab" />}>
+          <Laboratorio bg={bg} setBg={setBg} />
+        </Suspense>
       ) : (
         <>
           <Hero />

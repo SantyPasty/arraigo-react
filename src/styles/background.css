@@ -1,4 +1,6 @@
-/* Fondo Dither fijo detrás de toda la página. */
-.dither-bg{position:fixed;inset:0;z-index:-1;pointer-events:none}
-/* Velo del color de fondo: baja el contraste de las ondas para que el texto se siga leyendo. */
-.dither-bg::after{content:"";position:absolute;inset:0;background:rgba(8,32,29,.58)}
+/* Fondo animado fijo detrás de toda la página. */
+.page-bg{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.page-bg-layer{position:absolute;inset:0}
+.page-bg-layer>*{width:100%;height:100%}
+/* Velo del color de fondo: baja el contraste para que el texto se siga leyendo. Cada fondo define su --veil. */
+.page-bg::after{content:"";position:absolute;inset:0;background:rgba(8,32,29,var(--veil,.5))}

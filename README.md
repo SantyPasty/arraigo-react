@@ -26,7 +26,8 @@ Luego abre http://localhost:5173/arraigo-react/.
    ```
 
    El archivo queda en `src/components/`.
-3. Agrega una tarjeta en `src/lab/Laboratorio.jsx`: un objeto nuevo dentro de la lista `demos`.
+3. Agrega una tarjeta en `src/lab/Laboratorio.jsx`, dentro de la categoría que corresponda (Texto, Logo o Interacción).
+   Si es un fondo, agrégalo en `src/backgrounds/PageBackground.jsx` y aparecerá solo en el selector de fondos.
 4. Si convence, úsala en la sección que corresponda en `src/sections/`.
 
 ## Cómo está organizado
@@ -36,6 +37,7 @@ Luego abre http://localhost:5173/arraigo-react/.
 | `src/sections/` | Cada sección de la landing: Hero, Costo, Solución, etc. |
 | `src/components/` | Componentes instalados de React Bits |
 | `src/lab/` | Página del laboratorio |
+| `src/backgrounds/` | Fondos animados intercambiables (Dither, Threads, Topography…) |
 | `src/hooks/` | Lógica reutilizable: contador, aparición al hacer scroll, rutas |
 | `src/styles/landing.css` | El CSS original de la landing, sin cambios |
 | `public/` | Favicons y la foto de MaskedHeading |
