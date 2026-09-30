@@ -3,3 +3,4 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 
 @import "./styles/landing.css";
+@import "./styles/background.css";

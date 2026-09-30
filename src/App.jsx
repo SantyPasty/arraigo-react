@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import useHashRoute from './hooks/useHashRoute'
 import useReveal from './hooks/useReveal'
+import DitherBackground from './sections/DitherBackground'
 import Nav from './sections/Nav'
 import Hero from './sections/Hero'
 import Proof from './sections/Proof'
@@ -27,6 +28,7 @@ export default function App() {
 
   return (
     <>
+      <DitherBackground />
       <Nav onLab={onLab} />
       {onLab ? (
         <Laboratorio />
