@@ -1,0 +1,15 @@
+/* Estilos del laboratorio, con los mismos tokens de la landing. */
+.lab{padding:84px 0 104px}
+.lab-grid{display:flex;flex-direction:column;gap:24px}
+.lab-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+.lab-card-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px}
+.lab-card-head h3{font-family:var(--mono);font-size:14px;letter-spacing:.08em;color:var(--mint)}
+.lab-note{font-size:15px;color:var(--muted);margin-bottom:22px}
+.lab-stage{background:var(--ground-2);border:1px solid var(--line);border-radius:14px;padding:clamp(24px,5vw,56px);overflow:hidden}
+.lab-cmd{display:block;margin-top:18px;font-family:var(--mono);font-size:12.5px;color:var(--muted);background:var(--ground-2);border:1px solid var(--line);border-radius:10px;padding:10px 14px;overflow-x:auto;white-space:nowrap;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent}
+.f-lab{display:inline-block;margin-top:14px;font-size:14px;color:var(--mint)}
+.lab-blur{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.6vw,52px);line-height:1.1;letter-spacing:-.03em;color:var(--text);margin:0}
+.lab-split{font-family:var(--display);font-weight:600;font-size:clamp(28px,4.2vw,46px);line-height:1.12;letter-spacing:-.03em;color:var(--text)}
+.lab-stage .masked-heading{font-family:var(--display);color:var(--text)}
+.lab-back{margin-top:48px}
+.nav-links a[aria-current="page"]{color:var(--mint)}
